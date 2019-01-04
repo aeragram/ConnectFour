@@ -9,6 +9,7 @@ namespace ConnectFour
     {
         // game board array
         public byte[,] grid = new byte[6, 7];
+        public byte winner = 0;
 
         Dictionary<char, byte> colNumber = new Dictionary<char, byte>()
         { { 'A', 0 }, { 'B', 1 }, { 'C', 2 }, { 'D', 3 }, { 'E', 4 }, { 'F', 5 }, { 'G', 6} };
@@ -16,7 +17,7 @@ namespace ConnectFour
         Dictionary<string, byte> plrNumber = new Dictionary<string, byte>()
         { { "Red", 1 }, { "Yellow", 2 }};
         
-        //inserting token
+        // try to insert token
         public bool InsertToken(string token)
         {
             byte collumnNumber;
@@ -46,7 +47,7 @@ namespace ConnectFour
             return true;
         }
 
-        ///metoda wstawiająca do tablicy 'grid' tokena z numerem gracza w odpowiedniej kolumnie i odpowiednim wierszu
+        // insert token into 'grid' array
         private void InsertTokenNow(byte collumnNr, byte playerNr)
         {
             byte row = 0;
@@ -56,6 +57,7 @@ namespace ConnectFour
                 if (grid[row, collumnNr] == 0)
                 {
                     grid[row, collumnNr] = playerNr;
+                    IsWinner();
                     break;
                 }
                 else
@@ -64,5 +66,14 @@ namespace ConnectFour
                 }
             } while (true);
         }
+
+        // check if player wins
+        private void IsWinner()
+        {
+            
+        }
+
+       
+
     }
 }

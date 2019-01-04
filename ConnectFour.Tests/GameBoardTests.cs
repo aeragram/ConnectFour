@@ -7,7 +7,7 @@ namespace ConnectFour.Tests
     public class GameBoardTests
     {
         [TestMethod]
-        public void TestInsertToken()
+        public void InsertToken()
         {
             GameBoard gameBoard = new GameBoard();
 
@@ -20,7 +20,7 @@ namespace ConnectFour.Tests
         }
 
         [TestMethod]
-        public void TestInsertTokenIncorrectCollumn()
+        public void InsertTokenIncorrectCollumn()
         {
             GameBoard gameBoard = new GameBoard();
 
@@ -28,7 +28,7 @@ namespace ConnectFour.Tests
         }
 
         [TestMethod]
-        public void TestInsertTokenIncorrectPlayer()
+        public void InsertTokenIncorrectPlayer()
         {
             GameBoard gameBoard = new GameBoard();
 
@@ -36,7 +36,7 @@ namespace ConnectFour.Tests
         }
 
         [TestMethod]
-        public void TestInsertTokenCollumnOverload()
+        public void InsertTokenCollumnOverload()
         {
             GameBoard gameBoard = new GameBoard();
 
@@ -46,6 +46,7 @@ namespace ConnectFour.Tests
             gameBoard.InsertToken("A_Red");
             gameBoard.InsertToken("A_Yellow");
             gameBoard.InsertToken("A_Red");
+
             Assert.IsFalse( gameBoard.InsertToken("A_Yellow") );
         }
 

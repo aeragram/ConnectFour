@@ -7,8 +7,8 @@ namespace ConnectFour
 {
     public class GameBoard
     {
-        // Pola
-        public byte[,] grid = new byte[6, 7];   //<info> Plansza zlozona z 6 wierszy i 7 kolumn </info>
+        // game board array
+        public byte[,] grid = new byte[6, 7];
 
         Dictionary<char, byte> colNumber = new Dictionary<char, byte>()
         { { 'A', 0 }, { 'B', 1 }, { 'C', 2 }, { 'D', 3 }, { 'E', 4 }, { 'F', 5 }, { 'G', 6} };
@@ -16,7 +16,7 @@ namespace ConnectFour
         Dictionary<string, byte> plrNumber = new Dictionary<string, byte>()
         { { "Red", 1 }, { "Yellow", 2 }};
         
-        //obsługa wrzucania tokena do planszy
+        //inserting token
         public bool InsertToken(string token)
         {
             byte collumnNumber;
